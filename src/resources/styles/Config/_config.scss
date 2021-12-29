@@ -3,6 +3,11 @@
 $primary-color: red;
 $secondary-color: white;
 $accent-color: black;
+$profile-background: rgb(151, 25, 25);
 
 * {
-    font-family: 'Anton', sans-serif;}
+    font-family: 'Anton', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

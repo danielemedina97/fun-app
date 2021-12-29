@@ -1,0 +1,186 @@
+@use '../../styles/Config/config';
+@import url('https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css');
+
+//Containers
+.sidebar {
+    text-align: left;
+    height: 100vh;
+    width: 240px;
+    background-color: red;
+    position: fixed;
+    padding: 6px 14px;
+}
+
+.sidebar.active {
+    width: 240px;
+}
+
+.nav_list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar ul {
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin: 0 5px;
+    // border-radius: 12px;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 122px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    line-height: 35px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
+    text-align: center;
+    transition: all .5s ease;
+    // opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar ul li:hover .tooltip{
+    top: 50%;
+    opacity: 1;
+    // transition: all 0.5s ease;
+}
+
+.sidebar ul li .bx-search {
+    position: absolute;
+    color:rgb(134, 111, 111);
+    z-index: 99;
+    top: 0;
+    font-size: 20px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    line-height: 50px;
+    text-decoration: none;
+    transition: all .4s ease;
+    border-radius: 2px;
+
+}
+
+.sidebar ul li a:hover {
+    color: #11101d;
+    background: #fff;
+}
+
+.sidebar ul li input {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    left: 1px;
+    top: -10px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    background: #f2f2f5;
+    padding-left: 50px;
+    font-size: 15px;
+}
+
+.sidebar ul li a i {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+//Elements
+.sidebar .logo-content .logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+}
+
+.logo-content i {
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.logo-content .logo .logo-name {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.sidebar .btn {
+    color: #fff;
+    position: absolute;
+    left: 80%;
+    top: 20px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateY(-30%);
+}
+
+.sidebar .profile-content {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar .profile-content .profile {
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: config.$profile-background;
+}
+
+.profile-content .profile .profile-details {
+    display: flex;
+    align-items: center;
+}
+
+
+.profile .profile-details img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.profile .profile-details .name-job {
+    margin-left: 10px;
+}
+
+.profile .profile-details .name {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.profile .profile-details .job {
+    font-size: 12px;
+}
+
+.profile #log-out {
+    position: absolute;
+    left: 88%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 2px;
+}

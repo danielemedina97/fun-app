@@ -2,19 +2,6 @@ import React from 'react';
 import './_home.scss';
 
 export default function Home() {
-    const html = document.getElementsByTagName('html')[0];
-    html.style.height = '100%';
-    html.style.display = 'flex';
-
-    const body = document.getElementsByTagName('body')[0];
-    body.style.height = "100%";
-    body.style.width = "100%";
-
-    const root = document.getElementById('root');
-    root.style.height = "100%";
-    root.style.width = "100%";
-
-
 
     return (
         <div className="container home-container">
