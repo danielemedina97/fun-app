@@ -1,12 +1,16 @@
 @use '../../styles/Config/config';
+@import url('https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css');
 
 /*Containers*/
+
 .home-container{
+  position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  // overflow: hidden;
+  overflow: scroll;
+  z-index: 0;
 }
 
 header{
@@ -14,10 +18,26 @@ header{
   background-color: config.$primary-color;
   font-weight: 700;
   font-style: bold;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 100px;
 }
 
-header div {
+header .page-title {
     color: config.$secondary-color;
+    align-self: center;
+    white-space: nowrap;
+    margin-left: 5px;
+    font-size: .8rem;
+}
+
+header .hamburger-btn {
+  color: white;
+  font-size: 45px;
+  align-self: center;
+  justify-self: start;
+  padding-left: 10px;
+  cursor: pointer;
 }
 
 section.home-body {
@@ -33,7 +53,6 @@ form {
 .form-field-container {
   margin: 0 auto;
   margin-bottom: 25px;
-
 }
 
 .home-body {
@@ -48,13 +67,12 @@ form {
 footer {
   background-color: config.$primary-color;
   height: 100px;
-  margin-top: auto;
 }
 
 
 /*Elements*/
 .login-greeting {
-  color: rgb(56, 55, 55);
+  color: black;
 }
 
 header:first-child {
@@ -72,11 +90,38 @@ header:first-child {
   display: inline-block;
   border:none;
   border-bottom: 1px solid rgb(172, 168, 168);
+  outline: none;
 }
 
 form a{
   text-decoration: none;
 }
+
+.login-submit {
+  min-width: 125px;
+  min-height: 40px;
+  background-color: rgb(235, 12, 12);
+  border: none;
+  box-shadow: 0px 0px 3px 2px rgba(17, 17, 17, .3);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.login-submit:hover {
+  background-color: rgb(202, 9, 9);
+}
+
+.login-submit:active {
+  background-color: rgb(202, 9, 9);
+  transform: translateY(5px);
+  box-shadow: 0px 0px 5px 2px rgba(17, 17, 17, .9);
+
+}
+
+
 
 .forgot-password {
   font-weight: 0;
@@ -94,3 +139,162 @@ form a:visited{
 form a:hover{
   color: blue;
 }
+
+.overlay.not-active {
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba($color: #070000, $alpha: 0.8);
+}
+
+@media screen and (orientation: portrait) and
+ (min-width: 0px) and (min-height: 0px){
+  header {
+    min-height: 50px;
+  }
+
+  header .page-title {
+    font-size: 10px;
+  }
+
+
+  footer {
+    min-height: 40px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (orientation: portrait) and
+ (min-width: 250px){
+  header {
+    max-height: 50px;
+  }
+
+  header .page-title {
+    font-size: 15px;
+  }
+
+  footer {
+    max-height: 40px;
+  }
+}
+
+@media screen and (orientation: portrait) and
+ (min-width: 750px){
+  header {
+    max-height: 50px;
+  }
+
+  header .page-title {
+    font-size: 16px;
+  }
+
+  footer {
+    max-height: 40px;
+  }
+}
+
+
+
+@media screen and (orientation: landscape) and
+ (min-width: 0px) and (min-height: 0px){
+  header {
+    min-height: 50px;
+  }
+
+  header .page-title {
+    font-size: 10px;
+  }
+
+
+  footer {
+    min-height: 40px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (orientation: landscape) and
+ (min-width: 500px){
+  header {
+    max-height: 50px;
+  }
+
+  header .page-title {
+    font-size: 15px;
+  }
+
+
+  footer {
+    min-height: 40px;
+    margin-top: 20px;
+    max-height: 50px;
+  }
+}
+
+@media screen and (orientation: landscape) and
+ (min-width: 750px){
+  header {
+    min-height: 50px;
+  }
+
+  header .page-title {
+    font-size: 16px;
+  }
+
+
+  footer {
+    min-height: 40px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (orientation: landscape) and
+ (min-width: 1000px){
+  header {
+    min-height: 50px;
+  }
+
+  header .page-title {
+    font-size: 16px;
+  }
+
+  .login-greeting {
+    font-size: 50px;
+    color: black;
+  }
+
+  .login-form{
+    min-height: 500px;
+    min-width: 500px;
+  }
+
+  .login-form div {
+    line-height: 70px;
+  }
+
+  .login-form div:last-child {
+    line-height: 10px;
+  }
+
+  
+
+  .login-form input {
+    min-width: 350px;
+    font-size: 22px;
+    color: rgb(5, 5, 5);
+    font-weight: lighter;
+  }
+
+  .login-form a {
+    font-size: 22px;
+  }
+
+
+  footer {
+    min-height: 40px;
+    margin-top: 20px;
+  }
+}
+

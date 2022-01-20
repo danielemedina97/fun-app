@@ -5,37 +5,56 @@ import { useEffect } from 'react';
 
 export default function SidNav() {
     
-    // useEffect(() => {
-    //     let btn = document.getElementsByClassName('btn')[0];
-    // let sidebar = document.getElementsByClassName('sidebar')[0];
-    // let searchBtn = document.getElementsByClassName('bx-search')[0];
+    useEffect(() => {
+        let brgrBtnSidenav = document.getElementsByClassName('hamburger-btn-sidenav')[0];
+        let sidebar = document.getElementsByClassName('sidebar')[0];
+        let searchBtn = document.getElementsByClassName('bx-search')[0];
+        let homeContainer = document.getElementsByClassName('home-container')[0];
+        let overlay = document.getElementsByClassName('overlay')[0];
 
-    // btn.addEventListener('click', () => {
-    //     sidebar.classList.toggle('active');
-    // });
+        brgrBtnSidenav.addEventListener('click', () => {
+            sidebar.classList.toggle('not-active');
+            homeContainer.classList.toggle('not-active');
+            overlay.classList.toggle('not-active');
 
-    // btn.addEventListener('click', () => {
-    //     sidebar.classList.toggle('active');
-    // });
-    // });
+        });
+
+        searchBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('not-active');
+            homeContainer.classList.toggle('not-active');
+            overlay.classList.toggle('not-active');
+        });
+
+        // btn.addEventListener('click', () => {
+        //     sidebar.classList.toggle('active');
+        // });
+    });
+
     
     return (
-        <div className="sidebar">
+        <div className="sidebar not-active">
             <div className="logo-content">
+            <i className='bx bx-menu btn hamburger-btn hamburger-btn-sidenav'></i>
                 <div className="logo">
                     <i className='bx bxl-c-plus-plus'></i>
-                    <div className='logo-name'>CodingLab</div>
+                    <div className='logo-name'>TFC</div>
                 </div>
-                <i className='bx bx-menu btn'></i>
             </div>
-            <ul className='nav_list'>
-                <li>
-                    <a href='#'>
+            <div id="search-bar">
+                <a href='#'>
                     <i className='bx bx-search' ></i>                        
                     <input type='text' placeholder='Search...'></input>
+                </a>
+                <span className='tooltip'>Search...</span>
+            </div>
+            <ul className='nav-list'>
+                {/* <li id="search-bar">
+                    <a href='#'>
+                        <i className='bx bx-search' ></i>                        
+                        <input type='text' placeholder='Search...'></input>
                     </a>
                     <span className='tooltip'>Search...</span>
-                </li>
+                </li> */}
                 <li>
                     <a href='#'>
                         <i className='bx bxs-grid-alt'></i>
@@ -45,21 +64,21 @@ export default function SidNav() {
                 </li>
                 <li>
                     <a href='#'>
-                    <i className='bx bx-user' ></i>
+                        <i className='bx bx-user' ></i>
                         <span className='links-name'>User</span>
                     </a>
                     <span className='tooltip'>User</span>
                 </li>
                 <li>
                     <a href='#'>
-                    <i className='bx bx-chat' ></i>
+                        <i className='bx bx-chat' ></i>
                         <span className='links-name'>Messages</span>
                     </a>
                     <span className='tooltip'>Messages</span>
                 </li>
                 <li>
                     <a href='#'>
-                    <i className='bx bx-pie-chart-alt-2' ></i>
+                        <i className='bx bx-pie-chart-alt-2' ></i>
                         <span className='links-name'>Analytics</span>
                     </a>
                     <span className='tooltip'>Analytics</span>
@@ -93,19 +112,6 @@ export default function SidNav() {
                     <span className='tooltip'>Settings</span>
                 </li>
             </ul>
-            <div className='profile-content'>
-                <div className='profile'>
-                    <div className='profile-details'>
-                        <img src={MePic} alt=''></img>
-                        <div className='name-job'>
-                            <div className='name'>Daniel Medina</div>
-                            <div className='job'>Web Designer</div>
-                        </div>
-                    </div>
-                    <i className='bx bx-log-out' id="log-out"></i>
-                </div>
-            </div>
-
         </div>
     )
 }

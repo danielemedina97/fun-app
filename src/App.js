@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './resources/components/Home/Home.js';
 import SidNav from './resources/components/SideNav/SidNav.js';
+import Profile from './resources/components/Profile/Profile.js';
 
 function App() {
   const html = document.getElementsByTagName('html')[0];
@@ -19,7 +20,9 @@ function App() {
   return (
     <div className="App">
       <SidNav></SidNav>
-       {/* <Home/> */}
+       <Home/>
+       
+      {/* <Profile></Profile> */}
     </div>
   );
 }
